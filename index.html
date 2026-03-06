@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HKN Media | Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="animate nav-animate">
+        <a href="index.html" class="logo">HKN Media</a>
+        <ul class="nav-links">
+            <li><a href="index.html" style="opacity: 1;">Home</a></li>
+            <li><a href="photography.html">Photography</a></li>
+            <li><a href="design.html">Design</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-slider animate hero-animate">
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?auto=format&fit=crop&w=1920');">
+            <div class="content-wrapper">
+                <h1>Hung K. Nguyen Media</h1>
+                <p class="subtitle hero-subtitle">Creative Excellence</p>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1920');">
+            <div class="content-wrapper">
+                <h1>Photography</h1>
+                <p class="subtitle hero-subtitle">Capturing the soul of the subject</p>
+                <a href="photography.html" class="btn">View Gallery</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1920');">
+            <div class="content-wrapper">
+                <h1>Graphic Design</h1>
+                <p class="subtitle hero-subtitle">Modern visual solutions</p>
+                <a href="design.html" class="btn">View Portfolio</a>
+            </div>
+        </div>
+        <button class="slider-arrow prev" aria-label="Previous Slide" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="slider-arrow next" aria-label="Next Slide" onclick="moveSlide(1)">&#10095;</button>
+    </header>
+
+    <section class="page-container">
+        <div class="content-wrapper animate title-animate">
+            <h2 class="section-title">Recent Work</h2>
+            <div class="title-accent"></div>
+        </div>
+
+        <div class="grid animate grid-animate">
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800" alt="Work 1">
+                <div class="grid-overlay"><span>View Project</span></div>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=800" alt="Work 2">
+                <div class="grid-overlay"><span>View Project</span></div>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1454165833767-027508496b4c?auto=format&fit=crop&w=800" alt="Work 3">
+                <div class="grid-overlay"><span>View Project</span></div>
+            </div>
+            <div class="grid-item">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800" alt="Work 4">
+                <div class="grid-overlay"><span>View Project</span></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

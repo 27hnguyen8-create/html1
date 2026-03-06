@@ -1,0 +1,105 @@
+/* ELEGANT TYPOGRAPHY IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #0d0d0d; color: #ffffff; font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+
+/* --- EDITORIAL TYPOGRAPHY --- */
+h1, h2, h3, .section-title, .logo { 
+    font-family: 'Playfair Display', serif; 
+    font-weight: 500; 
+    color: #ffffff; 
+}
+
+h1 { font-size: clamp(36px, 5vw, 64px); margin-bottom: 20px; line-height: 1.2; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+h2 { font-size: 26px; letter-spacing: 2px; }
+
+.section-title { text-transform: uppercase; letter-spacing: 6px; font-size: 30px; font-weight: 400; }
+.subtitle { font-family: 'Montserrat', sans-serif; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; font-size: 11px; color: #aaaaaa; margin-bottom: 20px; }
+
+/* Specific style for Home Hero subtitles to ensure visibility */
+.hero-subtitle { color: #ffffff; font-weight: 400; text-shadow: 0 2px 4px rgba(0,0,0,0.5); opacity: 1; }
+
+.title-accent { width: 50px; height: 1px; background: #aaaaaa; margin: 0 auto 50px; opacity: 0.5; }
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+.nav-animate { animation-delay: 0.1s; }
+.hero-animate { animation-delay: 0.3s; }
+.title-animate { animation-delay: 0.5s; }
+.grid-animate { animation-delay: 0.7s; }
+.page-exit { transition: opacity 0.4s ease; opacity: 0 !important; }
+
+/* --- NAVIGATION --- */
+nav { position: fixed; top: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 30px 60px; background: rgba(13, 13, 13, 0.85); backdrop-filter: blur(10px); }
+.logo { font-size: 22px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; color: #ffffff; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { color: #ffffff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; opacity: 0.6; transition: 0.5s; }
+.nav-links a:hover { opacity: 1; letter-spacing: 5px; }
+
+/* --- HERO SLIDER (Home Page) --- */
+.hero-slider { position: relative; height: 100vh; width: 100%; background: #000; overflow: hidden; }
+.slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1.5s ease; display: flex; align-items: center; justify-content: center; will-change: opacity; }
+.slide.active { opacity: 1; z-index: 2; }
+.slide::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); }
+.hero-slider .content-wrapper { text-align: center; position: relative; z-index: 10; padding: 0 20px; }
+.hero-slider h1 { transform: translateY(20px); transition: transform 1s ease 0.3s, opacity 1s ease 0.3s; opacity: 0; }
+.slide.active .content-wrapper h1 { transform: translateY(0); opacity: 1; }
+.slider-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(255,255,255,0.2); color: white; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; z-index: 100; transition: 0.3s; display: flex; align-items: center; justify-content: center; outline: none; }
+.slider-arrow:hover { background: #fff; color: #000; }
+.prev { left: 40px; } .next { right: 40px; }
+
+/* --- PAGE STRUCTURE --- */
+.page-container { padding: 120px 0 100px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; width: 90%; max-width: 1200px; margin: 0 auto; }
+.grid-item { position: relative; height: 450px; overflow: hidden; cursor: pointer; background: #1a1a1a; }
+.grid-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+.grid-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; }
+.grid-overlay span { font-family: 'Montserrat', sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; border: 1px solid #fff; padding: 12px 24px; }
+.grid-item:hover img { transform: scale(1.08); }
+.grid-item:hover .grid-overlay { opacity: 1; }
+
+/* --- TAB SLIDER (Photography & Design Pages) --- */
+.tab-gallery-container { width: 100vw; height: 70vh; display: flex; align-items: center; overflow: hidden; position: relative; }
+.tab-wrapper { display: flex; gap: 30px; padding-left: 15vw; transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1); }
+.tab-item { min-width: 70vw; height: 60vh; filter: grayscale(100%); opacity: 0.3; transition: all 0.8s ease; cursor: pointer; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); position: relative; }
+.tab-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
+.tab-item.active { filter: grayscale(0%); opacity: 1; border: 1px solid rgba(255, 255, 255, 0.5); }
+.tab-item.paused::after { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; background: rgba(255, 255, 255, 0.8); width: 0%; animation: pauseTimer 6s linear forwards; z-index: 5; }
+@keyframes pauseTimer { 0% { width: 0%; } 100% { width: 100%; } }
+
+/* --- INTERACTIVE CATEGORIES (DESIGN) --- */
+.cat-container { display: flex; gap: 20px; width: 90%; max-width: 1200px; margin: 0 auto; height: 350px; transition: height 0.6s ease; }
+.cat-container.expanded { height: auto; }
+.cat-box { flex: 1; background: #111; border: 1px solid #333; display: flex; flex-direction: column; overflow: hidden; transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; }
+.cat-title { flex: 1; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s; }
+.cat-gallery { display: none; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 20px 20px; }
+.cat-img-wrapper { height: 350px; overflow: hidden; border: 1px solid #333; }
+.cat-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; }
+.cat-img-wrapper:hover img { transform: scale(1.05); }
+.cat-box.active { flex: 1 1 100%; cursor: default; border: none; }
+.cat-box.active .cat-title { flex: 0 0 80px; font-size: 28px; cursor: pointer; border-bottom: 1px solid #333; margin-bottom: 20px; }
+.cat-box.active .cat-title::after { content: ' — CLOSE'; font-family: 'Montserrat', sans-serif; font-size: 10px; opacity: 0.5; margin-left: 15px; letter-spacing: 2px; }
+.cat-box.active .cat-gallery { display: grid; }
+.cat-box.hidden { flex: 0; opacity: 0; pointer-events: none; padding: 0; margin: 0; }
+
+/* --- CONTACT SECTION --- */
+.contact-flex { display: flex; flex-wrap: wrap; gap: 80px; width: 90%; max-width: 1100px; margin: 0 auto; text-align: left; align-items: flex-start; }
+.about-col { flex: 1; min-width: 300px; }
+.form-col { flex: 1.2; min-width: 300px; }
+.portrait-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; filter: grayscale(100%); border: 1px solid #333; margin-bottom: 30px; }
+.about-col p { color: #aaaaaa; font-size: 15px; }
+input, textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid #333; color: white; padding: 15px 0; margin-bottom: 30px; outline: none; transition: border-color 0.3s; font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
+input:focus, textarea:focus { border-bottom-color: #ffffff; }
+
+/* --- BUTTONS --- */
+.btn { font-family: 'Montserrat', sans-serif; background: transparent; color: #fff; border: 1px solid #fff; padding: 14px 40px; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; cursor: pointer; transition: 0.4s; font-weight: 400; }
+.btn:hover { background: #fff; color: #000; }
+
+/* --- MOBILE --- */
+@media (max-width: 768px) {
+    nav { padding: 20px; flex-direction: column; gap: 15px; }
+    .grid { grid-template-columns: 1fr; }
+    .cat-container { flex-direction: column; height: auto; }
+}
