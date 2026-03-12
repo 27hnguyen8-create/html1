@@ -1,0 +1,36 @@
+body {
+background-color: #f5f6f6;
+}
+h1 {
+color: DarkSlateGrey;
+font-family: verdana;
+font-size:40px;
+}
+h2 {
+color: DarkSlateGrey;
+font-family: verdana;
+font-size:30px;
+}
+p {
+color: #637383;
+font-family: serif;
+font-size:20px;
+}
+a:link {
+  color: #99a6b2;
+  background-color: transparent;
+  font-family: verdana;
+  text-decoration: none;
+}
+a:visited {
+  color: #97a7a7;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: #6d8484;
+}
+a:active {
+  color: #a1b0b0;
+  background-color: transparent;
+}
